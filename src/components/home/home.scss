@@ -1,0 +1,157 @@
+.banner{
+width: 1440;
+height: 600;
+top: 128px;
+display: flex;
+border-radius: 10px;
+
+
+
+
+}
+.bannerImg{
+width: 1440;
+height: 600;
+top: 128px;
+background: #00000066;
+
+
+}
+.bannerText{
+    position: absolute;
+    display: flex;
+    top: 208px; /* Центрирование по вертикали */
+    left: 20px; /* Центрирование по горизонтали */
+    transform: translate(-0%, 60%); /* Смещение обратно на 50% ширины/высоты */
+    color: white; /* Белый текст */
+    font-size: 80px;
+    font-weight: bold;
+    gap: 40px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    height: 310px;
+    width: 1360px;
+
+}
+.buttonCheck{
+width: 218px;
+height: 58px;
+border-radius: radius small;
+padding-top: 16px;
+padding-right: 56px;
+padding-bottom: 16px;
+padding-left: 56px;
+gap: 10px;
+background: #92A134;
+transform: translate(-580%, 350% );
+left:  20px;
+top: 208px;
+color: white;
+
+}
+.buttonCheck.text{
+font-family: Montserrat;
+font-weight: 600;
+font-size: 20px;
+line-height: 26px;
+letter-spacing: 0%;
+text-align: center;
+
+}
+.containerCategories{
+width: 1360;
+height: 528;
+top: 808px;
+left: 40px;
+gap: 40px;
+
+}
+.category{
+font-family: Montserrat;
+font-weight: 700;
+font-size: 64px;
+line-height: 70.4px;
+letter-spacing: 0%;
+}
+.line{
+    border: 1px;
+    width: 825px;
+    background-color: gray;
+    margin: 20px 0;
+    top: 808px;
+    left: 40px;
+
+}
+.discount{
+width: 1360px;
+height: 486px;
+top: 1416px;
+left: 40px;
+border-radius: radius big;
+padding-top: 32px;
+padding-right: 32px;
+padding-left: 32px;
+gap: 24px;
+background: linear-gradient(261.47deg, #0B710B 32.63%, #339933 98.96%);
+}
+.text{
+font-family: Montserrat;
+font-weight: 700;
+font-size: 64px;
+line-height: 70.4px;
+letter-spacing: 0%;
+text-align: center;
+color: white;
+width: 1296;
+height: 70;
+}
+.discountProduct{
+    width: 748px;
+    height: 360px;
+    position: absolute;
+    left:  50%;
+    transform: translateX(-135%);
+    bottom: -1040px;
+    }
+    .form{
+        width: 516px;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px; /* Расстояние между полями */
+        padding: 15px  850px;
+        border-radius: 8px; /* Закругление краёв */
+        
+    }
+    .input{
+        height: 70px !important;
+        padding: 15px;
+        border: 2px solid green;
+        border-radius: 8px;
+        font-size: 30px;
+        color: green;
+        background: transparent;
+        outline: none;
+        gap: 10px;
+        box-sizing: content-box;
+
+    }
+    input::placeholder {
+        color: red;
+        opacity: 0.7;
+      }
+    
+      button {
+        height: 48px;
+        background: #fff;
+        color: black;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+    
+      button:hover {
+        background: gray;
+      }
