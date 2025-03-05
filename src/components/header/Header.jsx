@@ -1,39 +1,61 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./header.scss";
 import { Link } from 'react-router-dom';
-import Logo from "./assets/logo (1).png";
-import Moon from "./assets/mode=light (1).png";
-import Heard from "./assets/basket=heart empty (1).png";
-import Backet  from"./assets/basket=card - empty.png"
+import img from "./assets/logo.png";
+import imgCart from "./assets/Cart.png";
+// import cartCount from "./assets/"
 
 
-export default function Header() {
-  
-
-
-  return (
-    <div className='header'>
-     
-      <img src={Logo} alt="Logo" className='Logo' />
-      <Link to="/">
-           <img src={Moon} alt="moodligth" className='Moon' />
-     </Link>
-
-     <nav className="nav">
-          <h1>Main Pages</h1> 
-          <h1>Categories</h1>
-          <h1>All products</h1>
-          <h1>All  Sales</h1>
-    </nav>
-    <img src={Heard} alt="heard" className='heard' />
-    <Link to="/">
-    <img src={Backet} alt="backet"  className='backet'/>
-    </Link>
+ const  Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для управления меню
     
-     
+  const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen); // Переключаем состояние меню
+  };
+
+return (
+  <div className="header_all">
+      <div className='logo'>
+          <img id="logo" src={img} alt="logo" />
+      </div>
+      <div className={`top_line${isMenuOpen ? "open" : ""}`}>
+      <ul>
+          <li className="main_Page">
+          <Link to="/" onClick={toggleMenu}> 
+                      <p>Main Page</p>
+                  </Link>
+          </li>
+          <li className="categories">
+          <Link to="/categories" onClick={toggleMenu}> 
+                      <p>Categories</p>
+                  </Link>
+          </li>
+          <li className="all_products">
+          <Link to="/products" onClick={toggleMenu}> 
+                      <p>All products</p>
+                  </Link>
+          </li>
+          <li className="all_sales" onClick={toggleMenu}>
+          <Link to="/sales"> 
+                      <p>All sales</p>
+                  </Link>
+          </li>
+          </ul>
+      </div>
+      <div className='numer_cart'>
+          <img id='cart' src={imgCart} alt="cart" />
+          <div className="cart_count">{ }</div> 
+          {/* Бургер-меню */}
+          <div className={`burger_menu ${isMenuOpen ? "open" : ""}`} onClick={toggleMenu}>
+          <div className="burger_line"></div>
+          <div className="burger_line"></div>
+          <div className="burger_line"></div>
+      </div>
+      </div>
 
       
+  </div>
+)
+ }
 
-    </div>
-  )
-}
+export default Header
