@@ -1,6 +1,7 @@
+
 .footer{
-width: 1440;
-height: 948;
+width: 1440px;
+height: 948px;
 top: 2594px;
 padding-right: 40px;
 padding-bottom: 80px;
@@ -8,3 +9,158 @@ padding-left: 40px;
 gap: 40px;
 
 }
+.footerText{
+width: 1360px;
+height: 70px;
+font-family: Montserrat;
+font-weight: 700px;
+font-size: 64px;
+line-height: 110.00000000000001%;
+letter-spacing: 0%;
+}
+.cart{
+width: 1360px;
+height: 758px;
+gap: 90px;
+display: grid;
+
+
+}
+.info{
+width: 1360px;
+height: 376px;
+gap: 80px;
+display: grid
+
+
+}
+.cart1{
+width: 1360px;
+height: 160px;
+gap: 32px;
+display: flex;
+
+}
+.contact{
+width: 780px;
+height: 150px;
+gap: 16px;
+border-radius: radius big;
+padding: 32px;
+background: #F2F6D3;
+
+}
+.phone{
+font-family: Montserrat;
+font-weight: 500px;
+font-size: 20px;
+line-height: 130%;
+letter-spacing: 0%;
+color: #8B8B8B;
+
+
+}
+.number{
+    font-family: Montserrat;
+    font-weight: 600px;
+    font-size: 40px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    color: #424436;
+
+    }
+.Social{
+width: 548px;
+height: 150px;
+gap: 16px;
+border-radius: radius big;
+padding: 32px;
+background: #F2F6D3;
+}
+.social{
+font-family: Montserrat;
+font-weight: 500px;
+font-size: 20px;
+line-height: 130%;
+letter-spacing: 0%;
+color: #8B8B8B;
+
+}
+.frame{
+ width: 38px;
+height: 38px;
+top: 3px;
+left: 3px;
+display: flex;
+gap: 10px;
+    }
+
+.cart2{
+width: 1360px;
+height: 150px;
+gap: 32px;
+display: flex;
+
+}
+.Address{
+    width: 780px;
+    height: 194px;
+    gap: 16px;
+    border-radius: radius big;
+    padding: 32px;
+    background: #F2F6D3;
+    }
+    .add{
+font-family: Montserrat;
+font-weight: 500px;
+font-size: 20px;
+line-height: 130%;
+letter-spacing: 0%;
+color: #8B8B8B;
+
+    }
+.street{
+font-family: Montserrat;
+font-weight: 600px;
+font-size: 40px;
+line-height: 110.00000000000001%;
+letter-spacing: 0%;
+color: #424436;
+}
+.hours{
+width: 548px;
+height: 194px;
+gap: 16px;
+border-radius: radius big;
+padding: 32px;
+background: #F2F6D3;
+}
+.work{
+font-family: Montserrat;
+font-weight: 500px;
+font-size: 20px;
+line-height: 130%;
+letter-spacing: 0%;
+color: #8B8B8B;
+}
+.day{
+font-family: Montserrat;
+font-weight: 600px;
+font-size: 40px;
+line-height: 110.00000000000001%;
+letter-spacing: 0%;
+color: #424436;
+
+}
+.map{
+    width: 1360;
+    height: 350;
+    border-radius: radius big;
+    
+    
+    }
+    .map.iframe{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }

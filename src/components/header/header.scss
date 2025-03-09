@@ -21,7 +21,7 @@
     
     #logo {
         height: 70px;
-        padding-left: 40px;
+        padding-left: 20px;
 
         @media (max-width: 480px) {
             width: 44px;
@@ -29,7 +29,7 @@
             padding-top: 10px;
         }
     }
-    .top_line {
+    .txt {
         width: 518px;
         height: 26px;
         display: flex;
@@ -69,9 +69,52 @@
             }
         }
     }
+    .side_menu {
+        display: none; // По умолчанию скрываем меню
+
+        .txt_open {
+            list-style: none;
+
+            p {
+                cursor: pointer;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 31px;
+                margin: 60px 10px;
+                
+    
+                &:hover {
+                color: rgba(221, 221, 221, 1); 
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            display: block; // Показываем меню на экранах 480px и меньше
+            width: 282px;
+            height: 100vh; // На всю высоту экрана
+            background: white;
+            position: fixed; // Фиксированное позиционирование
+            top: 0;
+            right: -282px; // Скрываем меню за пределами экрана
+            transition: left 0.3s ease; // Анимация для плавного появления
+            z-index: 1000; // Убедимся, что меню поверх других элементов
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); // Тень для эффекта "выдвижения"
+    
+            &.open {
+                left: 150px; // Показываем меню
+            }
+    }
+}
+.cart_burger {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-right: 20px;
+}
 
     .numer_cart {
-        padding-right: 40px;
+        margin-left: 20px;
         position: relative;
 
         @media (max-width: 480px) {
@@ -94,7 +137,7 @@
         .cart_count {
             position: absolute; 
             top: 5px; 
-            right: 70px; 
+            right: 30px; 
             background-color: rgba(146, 161, 52, 1);
             color: white; 
             border-radius: 50%; 
@@ -122,7 +165,9 @@
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            padding-top: 10px;
+            padding-top: 8px;
+            position: relative;
+            z-index: 1001;
             
         }
     
