@@ -2,7 +2,7 @@ import React from "react";
 import "./home.scss";
 import banner from "../assets/banner.jpg";
 import fertizer from "../assets/category/fertizer.png";
-import Listic from "../assets/category/listic.png";
+import listic from "../assets/category/listic.png";
 import pochva from "../assets/category/pochva.png";
 import lopata from "../assets/category/lopata.png";
 import product from "../assets/discountProduct.png";
@@ -38,7 +38,7 @@ export default function MainPages() {
             className="line-text"
             onClick={() => nandleClick("/categories")}
           >
-            All categories{" "}
+            All categories
           </button>
         </div>
 
@@ -49,7 +49,7 @@ export default function MainPages() {
           </div>
 
           <div className="img-container">
-            <img src={Listic} alt="listic" className="img" />
+            <img src={listic} alt="listic" className="img" />
             <p className="t">Protective products and septic tanks</p>
           </div>
           <div className="img-container">
@@ -65,13 +65,13 @@ export default function MainPages() {
       <section className="discount">
         <p className="text">5% off on the first order</p>
         <img src={product} alt="discountProduct" className="discountProduct" />
-
+        {/* 
         <form action="activ" className="form">
           <input type="text" placeholder="Name" />
           <input type="tell" placeholder="Phone number" />
           <input type="email" placeholder="Email" />
           <button type="submit">Get a discount</button>
-        </form>
+        </form> */}
       </section>
 
       <section className="sale">

@@ -1,5 +1,5 @@
 .banner{
-width: 1440;
+width: 100%;
 height: 600;
 top: 128px;
 display: flex;
@@ -10,7 +10,7 @@ border-radius: 10px;
 
 }
 .bannerImg{
-width: 1440;
+width: 100%;
 height: 600;
 top: 128px;
 background: #00000066;
@@ -59,16 +59,15 @@ text-align: center;
 
 }
 .containerCategories{
-width: 1360;
-height: 528;
-top: 808px;
+width: 100%;
+height: 528px;
 left: 40px;
 gap: 40px;
 padding: 40px;
 
 }
 .category{
-font-family: Montserrat;
+font-family: 'Montserrat';
 font-weight: 700;
 font-size: 64px;
 line-height: 70.4px;
@@ -80,7 +79,6 @@ top: -90px;
 width: 70%;
 margin-right: 50px;
 
-    
    
 }
 .line-box{
@@ -102,7 +100,7 @@ top: -130px;
 }
 
 .line-text{
-font-family: Montserrat;
+font-family: 'Montserrat';
 font-weight: 500px;
 font-size: 16px;
 line-height: 126%;
