@@ -1,0 +1,132 @@
+.product {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  
+  .product__item {
+  
+  }
+  
+  .product__image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product__details {
+  display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .product__info strong {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    text-align: start;
+  
+  }
+  .product__price {
+    width: 359px;
+    height: 70px;
+  
+  }
+  
+  .new-price {
+    font-weight: bold;
+    color: rgba(66, 68, 54, 1);
+  }
+  
+  .old-price {
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 10px;
+  }
+  
+  
+  .product__controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .product__quantity-btn {
+    width: 200px;
+    height: 58px;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 1px solid rgba(221, 221, 221, 1);
+  }
+  .product__quantity-btn {
+    display: flex;
+    align-items: center;
+    width: 200px; // Увеличим ширину
+    height: 58px; // Увеличим высоту
+    font-size: 24px; // Увеличим размер шрифта
+    border-radius: 5px;
+    border: 1px solid rgba(221, 221, 221, 1);
+  }
+  
+  .product__minus,
+  .product__plus {
+    width: 58px; // Задаём одинаковый размер для кнопок
+    height: 58px;
+    font-size: 30px; // Увеличиваем шрифт
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgba(221, 221, 221, 1);
+  }
+  
+  .product__add-to-cart-btn {
+    width: 316px;
+    height: 58px;
+    gap: 10px;
+    border-radius: 5px;
+    padding: 16px 32px;
+    background-color: rgba(146, 161, 52, 1);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+  }
+  
+  .product__description {
+    width: 548px;
+    height: 306px;
+  }
+  
+  .product__description button {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .product__description button:hover {
+    color: rgba(146, 161, 52, 1); // Цвет, как у кнопки "Add to cart"
+  }
+  
+  .product__description strong {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    color: rgba(66, 68, 54, 1);
+  }
+  
+  .product__description p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: rgba(66, 68, 54, 1);
+  }
+  
+  .product__description button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+  }

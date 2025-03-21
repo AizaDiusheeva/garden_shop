@@ -9,11 +9,10 @@ const Footer = () => {
 
   return (
     <div className="footer">
-      footer
       <h1 className="footerText">Contact</h1>
       <div className="cart">
         <div className="info">
-          <din className="cart1">
+          <div className="cart1">
             <div className="contact">
               <h3 className="phone">Phone</h3>
               <p className="number">+49 999 999 99 99</p>
@@ -29,12 +28,12 @@ const Footer = () => {
                 </Link>               
                 </div>
             </div>
-          </din>
+          </div>
           <div className="cart2">
             <div className="Address">
               <h3 className="add">Address</h3>
               <p className="street">
-                Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland
+                Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland
               </p>
             </div>
             <div className="hours">
@@ -53,10 +52,7 @@ const Footer = () => {
             allowFullScreen=""
             loading="lazy"
           ></iframe>
-
         </div>
-         
-        
       </div>
     </div>
   );

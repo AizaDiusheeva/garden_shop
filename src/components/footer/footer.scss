@@ -1,166 +1,126 @@
-
-.footer{
-width: 1440px;
-height: 948px;
-top: 2594px;
-padding-right: 40px;
-padding-bottom: 80px;
-padding-left: 40px;
-gap: 40px;
-
+.footer {
+    width: 100%;
+    padding: 0 40px 80px;
+    font-family: 'Montserrat';
+    margin-top: 170px;
+    margin-left: 40px;
 }
-.footerText{
-width: 1360px;
-height: 70px;
-font-family: Montserrat;
-font-weight: 700px;
-font-size: 64px;
-line-height: 110.00000000000001%;
-letter-spacing: 0%;
+
+.footerText {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 110%;
+    max-width: 1360px;
+ 
 }
-.cart{
-width: 1360px;
-height: 758px;
-gap: 90px;
-display: grid;
 
-
+/* Контейнеры */
+.cart,
+.cart1,
+.cart2,
+.map {
+    width: 100%;
+    max-width: 1360px;
+ 
 }
-.info{
-width: 1360px;
-height: 376px;
-gap: 80px;
-display: grid
 
-
+.cart {
+    display: grid;
+    gap: 90px;
 }
-.cart1{
-width: 1360px;
-height: 160px;
-gap: 32px;
-display: flex;
 
+.info {
+    display: grid;
+    gap: 80px;
 }
-.contact{
-width: 780px;
-height: 150px;
-gap: 16px;
-border-radius: radius big;
-padding: 32px;
-background: #F2F6D3;
 
+.cart1, .cart2 {
+    display: flex;
+    gap: 32px;
 }
-.phone{
-font-family: Montserrat;
-font-weight: 500px;
-font-size: 20px;
-line-height: 130%;
-letter-spacing: 0%;
-color: #8B8B8B;
 
-
-}
-.number{
-    font-family: Montserrat;
-    font-weight: 600px;
-    font-size: 40px;
-    line-height: 110.00000000000001%;
-    letter-spacing: 0%;
-    color: #424436;
-
-    }
-.Social{
-width: 548px;
-height: 150px;
-gap: 16px;
-border-radius: radius big;
-padding: 32px;
-background: #F2F6D3;
-}
-.social{
-font-family: Montserrat;
-font-weight: 500px;
-font-size: 20px;
-line-height: 130%;
-letter-spacing: 0%;
-color: #8B8B8B;
-
-}
-.frame{
- width: 38px;
-height: 38px;
-top: 3px;
-left: 3px;
-display: flex;
-gap: 10px;
-    }
-
-.cart2{
-width: 1360px;
-height: 150px;
-gap: 32px;
-display: flex;
-
-}
-.Address{
+/* Карточки */
+.contact, .Address {
     width: 780px;
-    height: 194px;
-    gap: 16px;
-    border-radius: radius big;
     padding: 32px;
     background: #F2F6D3;
-    }
-    .add{
-font-family: Montserrat;
-font-weight: 500px;
-font-size: 20px;
-line-height: 130%;
-letter-spacing: 0%;
-color: #8B8B8B;
+}
+.Social, .hours {
+    width: 548px;
+    padding: 32px;
+    background: #F2F6D3;
+}
 
-    }
-.street{
-font-family: Montserrat;
-font-weight: 600px;
-font-size: 40px;
-line-height: 110.00000000000001%;
-letter-spacing: 0%;
-color: #424436;
-}
-.hours{
-width: 548px;
-height: 194px;
-gap: 16px;
-border-radius: radius big;
-padding: 32px;
-background: #F2F6D3;
-}
-.work{
-font-family: Montserrat;
-font-weight: 500px;
-font-size: 20px;
-line-height: 130%;
-letter-spacing: 0%;
-color: #8B8B8B;
-}
-.day{
-font-family: Montserrat;
-font-weight: 600px;
-font-size: 40px;
-line-height: 110.00000000000001%;
-letter-spacing: 0%;
-color: #424436;
 
+.phone, .social, .add, .work {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: #8B8B8B;
 }
-.map{
-    width: 1360;
-    height: 350;
-    border-radius: radius big;
-    
-    
+
+.number, .street, .day {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    color: #424436;
+}
+
+/* Карта */
+.map {
+    height: 350px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Адаптация */
+@media (max-width: 1024px) {
+    .cart {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
     }
-    .map.iframe{
+}
+
+@media (max-width: 768px) {
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .contact, .Social, .Address, .hours {
         width: 100%;
-        height: 100%;
-        border-radius: 10px;
     }
+}
+
+@media (max-width: 480px) {
+    .footerText {
+        font-size: 48px;
+    }
+
+    .number, .street, .day {
+        font-size: 24px;
+    }
+
+    .cart {
+        display: flex;
+        flex-direction: column;
+        align-items: center; // Чтобы контент выровнялся по центру
+        gap: 20px; // Добавляем небольшие отступы между элементами
+    }
+
+    .cart1, .cart2 {
+        flex-direction: column;
+        width: 100%; // Растягиваем элементы на всю ширину
+    }
+
+    .contact, .Social, .Address, .hours {
+        width: 100%;
+    }
+}

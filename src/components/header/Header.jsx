@@ -36,7 +36,7 @@ import cartCount from "../cart/Cart"
                     </Link>
                 </li>
                 <li className="all_sales" onClick={toggleMenu}>
-                    <Link to="/sales"> 
+                    <Link to="/allsale"> 
                         <p>All sales</p>
                     </Link>
                 </li>

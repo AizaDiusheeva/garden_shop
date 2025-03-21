@@ -1,0 +1,42 @@
+.breadcrumbs {
+    display: flex;
+    font-size: 14px;
+    color: rgba(221, 221, 221, 1);
+    font-family: 'Montserrat';
+}
+
+.breadcrumb-button {
+    text-decoration: none; /* Убираем подчёркивание */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    height: 36px;
+    border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 5px;
+    color: rgba(221, 221, 221, 1);
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 36px;
+    background-color: transparent;
+    text-align: center;
+    display: inline-block;
+    padding: 0 12px; /* padding, чтобы кнопки были одинаковыми */
+
+    &:hover {
+        transform: translateY(-2px); /* Эффект поднятия */
+    }
+
+    &:active {
+        transform: translateY(0); /* Эффект нажатия */
+    }
+}
+
+/* Добавление разделителей между кнопками */
+.breadcrumbs span {
+    display: inline-block;
+    margin-right: 8px; /* Отступ между кнопками */
+}
+
+.breadcrumbs .breadcrumb-button + span::before {
+    content: " - "; /* Черта между кнопками */
+    color: rgba(221, 221, 221, 1); /* Цвет черты */
+}

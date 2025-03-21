@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./nav.scss";
+import Breadcrumbs from "./Breadckrumbs";
 
-export default function Nav() {
+ const  Nav=()=> {
   return (
-    <div>
-      <nav>
-        <Link to="/"></Link>
-        <Link to="/categories"></Link>
-        <Link to="/products"></Link>
-        <Link to="/products"></Link>
-        <Link to="/cart"></Link>
-        <Link to="/notFound"></Link>
-        <Link to="/allSale"></Link>
-      </nav>
-    </div>
-  );
-}
+    <div className="nav_container">
+            <Breadcrumbs />
+            <nav className='hidden'>
+                <Link to="/" className="nav_link">Home</Link>
+                <Link to="/categories" className="nav_link">Categories</Link>
+                <Link to="/products" className="nav_link">Products</Link>
+                <Link to="/cart" className="nav_link">Cart</Link>
+                <Link to="/notFound" className="nav_link">Not Found</Link>
+                <Link to="/allSale" className="nav_link">All Sales</Link>
+            </nav>
+        </div>
+    );
+  };
+  export default Nav;
