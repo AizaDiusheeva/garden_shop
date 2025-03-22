@@ -1,8 +1,8 @@
 .allProducts{
     width: 1360px;
     height: 1516px;
-    padding: 40px;
-    margin-top: -100px;
+    padding: 20px;
+    margin-top: -40px;
    
     
     
@@ -10,20 +10,19 @@
 }
 .title {
     font-weight: 1300px;
-    font-size: 70px;
+    font-size: 64px;
     line-height: 110%;
     font-weight: bold;
     text-align: left;
 }
 .products-container{
-width: 1360px;
-height: 1160px;
-border:  1px solid gray;
+width: 1340px;
+height: 1140px;
 gap: 8px;
 padding: 10px;
 display: grid;
 grid-template-columns: repeat(4, 1fr);
-gap: 20px;
+gap: 10px;
 
 
 }
@@ -86,10 +85,16 @@ h3 {
     font-size: 10px;
 }
 
-/* 💻 Экран до 1000px (3 колонки) */
+/* 💻 Экран до 1000px (4 колонки) */
 @media (max-width: 1000px) {
     .products-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+width: 728px;
+height: 2,550px;
+top: 210px;
+left: 20px;
+gap: 32px;
+
     }
 }
 
@@ -97,14 +102,24 @@ h3 {
 @media (max-width: 768px) {
     .products-container {
         grid-template-columns: repeat(2, 1fr);
+        width: 728px;
+height: 2550px;
+gap: 32px;
+
+
     }
 }
 
-/* 📱 Экран до 480px (1 колонка, центрируем) */
+/* 📱 Экран до 480px (2 колонка, центрируем) */
 @media (max-width: 480px) {
     .products-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         justify-items: center; /* Центрируем карточки */
+        width: 480px;
+height: 2441px;
+gap: 24px;
+
+
     }
     .product-card {
         width: 90%; /* Чтобы карточки не прилипали к краям */
@@ -114,7 +129,9 @@ h3 {
 /* 📱 Экран до 360px (ужимаем карточки) */
 @media (max-width: 360px) {
     .product-card {
-        width: 100%;
+       
+grid-template-columns: 1fr;
+
     }
 }
 
