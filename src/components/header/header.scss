@@ -1,191 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
-.header_all {
-    width: 1440px;
-    height: 128px;
-    border-bottom-width: 1px;
+.header {
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
     align-items: center;
     background: white;
-    font-family: 'Montserrat';
+    border-bottom: 1px solid #ddd;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+        width: 95%;
+    }
 
     @media (max-width: 480px) {
-        width: 100%;
         height: 68px;
-        border-bottom-width: 1px;
-        flex-direction: row;
     }
-}
-    
-    #logo {
-        height: 70px;
-        padding-left: 20px;
 
-        @media (max-width: 480px) {
-            width: 44px;
-            height: 44px; 
-            padding-top: 10px;
+    &__logo {
+        img {
+            height: 70px;
+
+            @media (max-width: 480px) {
+                width: 44px;
+                height: 44px;
+            }
         }
     }
-    .txt {
-        width: 518px;
-        height: 26px;
+
+    &__nav {
         display: flex;
-        justify-content: center;
-        flex-direction: row;
-        list-style: none;
-        gap: 22px;
 
         @media (max-width: 480px) {
-            display: none; // Скрываем ссылки на маленьких экранах
+            display: none;
+        }
+
+        &--open {
             flex-direction: column;
             width: 100%;
-            height: auto;
-            gap: 10px;
-    
-            &.open {
-                display: flex; // Показываем меню, если оно открыто
-            }
+            background: white;
+            align-items: center;
         }
     }
 
-        li {
-            a {
-                text-decoration: none; 
-                color: inherit;
-        } 
-        p {
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 26px;
-            margin: 0;
-            
+    &__menu {
+        display: flex;
+        gap: 22px;
+        list-style: none;
 
-            &:hover {
-            color: rgba(221, 221, 221, 1); 
-            }
-        }
-    }
-    .side_menu {
-        display: none; // По умолчанию скрываем меню
-
-        .txt_open {
-            list-style: none;
-
-            p {
-                cursor: pointer;
+        &-item {
+            .header__menu-link {
+                text-decoration: none;
+                color: black;
                 font-weight: 500;
-                font-size: 24px;
-                line-height: 31px;
-                margin: 60px 10px;
-                
-    
+                font-size: 18px;
+
                 &:hover {
-                color: rgba(221, 221, 221, 1); 
+                    color: rgba(221, 221, 221, 1);
                 }
+
             }
         }
 
         @media (max-width: 480px) {
-            display: block; // Показываем меню на экранах 480px и меньше
-            width: 282px;
-            height: 100vh; // На всю высоту экрана
-            background: white;
-            position: fixed; // Фиксированное позиционирование
-            top: 0;
-            right: -282px; // Скрываем меню за пределами экрана
-            transition: left 0.3s ease; // Анимация для плавного появления
-            z-index: 1000; // Убедимся, что меню поверх других элементов
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); // Тень для эффекта "выдвижения"
-    
-            &.open {
-                left: 150px; // Показываем меню
-            }
+            display: none;
+        }
     }
-}
-.cart_burger {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    padding-right: 20px;
-}
 
-    .numer_cart {
-        margin-left: 20px;
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__cart {
         position: relative;
 
-        @media (max-width: 480px) {
-                display: flex;
-                flex-direction: row;
-                gap: 20px;
-                justify-content: center;
-        }
-
-        #cart {
+        &-icon {
             width: 48px;
             height: 48px;
 
             @media (max-width: 480px) {
                 width: 30px;
-                height: 32px;                        
+                height: 32px;
             }
-
         }
-        .cart_count {
-            position: absolute; 
-            top: 5px; 
-            right: 30px; 
+
+        &-count {
+            position: absolute;
+            top: -1px;
+            left: -5px;
             background-color: rgba(146, 161, 52, 1);
-            color: white; 
-            border-radius: 50%; 
-            width: 26px; 
-            height: 26px; 
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 12px;
             font-weight: bold;
-            
-            @media (max-width: 480px) {
-                width: 17px;
-                height: 17px;
-                right: 100px;  
+        }
+    }
+
+    &__burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1001;
+
+        @media (max-width: 480px) {
+            display: flex;
+        }
+
+        &-line {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        &--open {
+            .header__burger-line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .header__burger-line:nth-child(2) {
+                opacity: 0;
+            }
+            .header__burger-line:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
             }
         }
     }
 
-    .burger_menu {
-        display: none; // Скрываем бургер-меню по умолчанию
-    
-        @media (max-width: 480px) {
-            display: flex; // Показываем бургер-меню на маленьких экранах
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding-top: 8px;
-            position: relative;
-            z-index: 1001;
-            
-        }
-    
-        .burger_line {
-            width: 25px;
-            height: 3px;
-            background-color: rgba(66, 68, 54, 1);
-            transition: transform 0.3s, opacity 0.3s;
-        }
-            &.open {
-        .burger_line:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .burger_line:nth-child(2) {
-            opacity: 0;
-        }
-        .burger_line:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+    &__side-menu {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: -282px;
+            width: 282px;
+            height: 100vh;
+            background: white;
+            transition: right 0.3s ease;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+
+            &--open {
+                right: 0;
+            }
+
+            &-list {
+                list-style: none;
+                padding-top: 100px;
+
+                .header__side-menu-item {
+                    margin-bottom: 20px;
+
+                    .header__side-menu-link {
+                        text-decoration: none;
+                        font-size: 24px;
+                        font-weight: 500;
+                        color: #333;
+
+                        &:hover {
+                            color: rgba(221, 221, 221, 1);
+                        }
+                    }
+                }
+            }
         }
     }
-    }
+}

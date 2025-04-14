@@ -1,0 +1,56 @@
+.notFound_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .notFound__image {
+    width: 100%;
+  }
+  
+  .notFound_content h1 {
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center;
+    color: rgb(66, 68, 54);
+  }
+  @media (max-width: 768px) {
+    .notFound_content h1 {
+      font-size: 48px;
+    }
+  }
+  @media (max-width: 480px) {
+    .notFound_content h1 {
+      font-size: 32px;
+    }
+  }
+  
+  .notFound_content p {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(139, 139, 139);
+  }
+  @media (max-width: 768px) {
+    .notFound_content p {
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 480px) {
+    .notFound_content p {
+      font-size: 16px;
+    }
+  }
+  
+  .notFound_btn {
+    border-radius: 5px;
+    padding: 16px 56px;
+    background: rgb(146, 161, 52);
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    border: none;
+  }
+  

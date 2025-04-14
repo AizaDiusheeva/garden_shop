@@ -1,0 +1,25 @@
+.container {
+    max-width: 1360px; // Ширина контейнера
+    width: 100%;
+    margin: 0 auto; // Центрирование
+    padding: 0 20px; // Отступы от краев экрана
+  
+  
+    @media (max-width: 1024px) {
+      max-width: 960px;
+      padding: 0 15px;
+    }
+  
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+  
+    @media (max-width: 480px) {
+      padding: 0 5px;
+    }
+  
+    @media (max-width: 380px) {
+      padding: 0 2px;
+    }
+  }

@@ -1,89 +1,131 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import "./header.scss";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import img from "../assets/img/logo.png";
 import imgCart from "../assets/img/Cart.png";
-import cartCount from "../cart/Cart"
+import { useSelector } from "react-redux";
 
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для управления меню
 
- const  Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для управления меню
-    
-        const toggleMenu = () => {
-            setIsMenuOpen(!isMenuOpen); // Переключаем состояние меню
-        };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Переключаем состояние меню
+  };
+  // Получаем данные корзины из Redux
+  const cartItems = useSelector((state) => state.cart.items);
 
-    return (
-        <div className="header_all">
-        <div className='logo'>
-            <img id="logo" src={img} alt="logo" />
+  // Вычисляем общее количество товаров в корзине
+  const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+  return (
+    <header className="header">
+      <div className="header__logo">
+        <img src={img} alt="logo" />
+      </div>
+      <nav className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
+        <ul className="header__menu">
+          <li className="header__menu-item">
+            <Link to="/" className="header__menu-link" onClick={toggleMenu}>
+              <p>Main Page</p>
+            </Link>
+          </li>
+          <li className="header__menu-item">
+            <Link
+              to="/categories"
+              className="header__menu-link"
+              onClick={toggleMenu}
+            >
+              <p>Categories</p>
+            </Link>
+          </li>
+          <li className="header__menu-item">
+            <Link
+              to="/products"
+              className="header__menu-link"
+              onClick={toggleMenu}
+            >
+              <p>All products</p>
+            </Link>
+          </li>
+          <li className="header__menu-item">
+            <Link
+              to="/allSale"
+              className="header__menu-link"
+              onClick={toggleMenu}
+            >
+              <p>All sales</p>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="header__actions">
+        <div className="header__cart">
+          <Link to="/cart">
+            <img className="header__cart-icon" src={imgCart} alt="cart" />
+            {cartCount > 0 && (
+              <div className="header__cart-count">{cartCount}</div>
+            )}
+          </Link>
         </div>
-        <div className={`top_line ${isMenuOpen ? "open" : ""}`}>
-            <ul className='txt'>
-                <li className="main_Page">
-                    <Link to="/" onClick={toggleMenu}> 
-                        <p>Main Page</p>
-                    </Link>
-                </li>
-                <li className="categories">
-                    <Link to="/categories" onClick={toggleMenu}> 
-                        <p>Categories</p>
-                    </Link>
-                </li>
-                <li className="all_products">
-                    <Link to="/products" onClick={toggleMenu}> 
-                        <p>All products</p>
-                    </Link>
-                </li>
-                <li className="all_sales" onClick={toggleMenu}>
-                    <Link to="/allsale"> 
-                        <p>All sales</p>
-                    </Link>
-                </li>
-            </ul>
+        {/* Бургер-меню */}
+        <div
+          className={`header__burger ${
+            isMenuOpen ? "header__burger--open" : ""
+          }`}
+          onClick={toggleMenu}
+        >
+          <span className="header__burger-line"></span>
+          <span className="header__burger-line"></span>
+          <span className="header__burger-line"></span>
         </div>
-        <div className='cart_burger'>
-            <div className='numer_cart'>
-                <img id='cart' src={imgCart} alt="cart" />
-                {cartCount > 0 && ( // Условный рендеринг кружочка
-                    <div className="cart_count">{cartCount}</div>)}
-            </div> 
-                {/* Бургер-меню */}
-            <div className={`burger_menu ${isMenuOpen ? "open" : ""}`} onClick={toggleMenu}>
-                <div className="burger_line"></div>
-                <div className="burger_line"></div>
-                <div className="burger_line"></div>
-            </div>
-            {/* Скрытое меню */}
-            <div className={`side_menu ${isMenuOpen ? "open" : ""}`}>
-                <ul className='txt_open'>
-                    <li className="main_Page">
-                        <Link to="/" onClick={toggleMenu}>
-                            <p>Main Page</p>
-                        </Link>
-                    </li>
-                    <li className="categories">
-                        <Link to="/categories" onClick={toggleMenu}>
-                            <p>Categories</p>
-                        </Link>
-                    </li>
-                    <li className="all_products">
-                        <Link to="/products" onClick={toggleMenu}>
-                            <p>All products</p>
-                        </Link>
-                    </li>
-                    <li className="all_sales">
-                        <Link to="/sales" onClick={toggleMenu}>
-                            <p>All sales</p>
-                        </Link>
-                    </li>
-                </ul>
-            </div> 
-        </div>           
-    </div>
-);
-
+        {/* Скрытое меню */}
+        <div
+          className={`header__side-menu ${
+            isMenuOpen ? "header__side-menu--open" : ""
+          }`}
+        >
+          <ul className="header__side-menu-list">
+            <li className="header__side-menu-item">
+              <Link
+                to="/"
+                className="header__side-menu-link"
+                onClick={toggleMenu}
+              >
+                <p>Main Page</p>
+              </Link>
+            </li>
+            <li className="header__side-menu-item">
+              <Link
+                to="/categories"
+                className="header__side-menu-link"
+                onClick={toggleMenu}
+              >
+                <p>Categories</p>
+              </Link>
+            </li>
+            <li className="header__side-menu-item">
+              <Link
+                to="/products"
+                className="header__side-menu-link"
+                onClick={toggleMenu}
+              >
+                <p>All products</p>
+              </Link>
+            </li>
+            <li className="header__side-menu-item">
+              <Link
+                to="/allSale"
+                className="header__side-menu-link"
+                onClick={toggleMenu}
+              >
+                <p>All sales</p>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  );
 };
-
 
 export default Header;

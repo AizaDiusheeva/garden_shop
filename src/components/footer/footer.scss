@@ -1,126 +1,174 @@
+.footer, .footer * {
+    box-sizing: border-box;
+}
 .footer {
-    width: 100%;
-    padding: 0 40px 80px;
-    font-family: 'Montserrat';
-    margin-top: 170px;
-    margin-left: 40px;
+    padding:  60px 20px;
+    text-align: start;
 }
 
-.footerText {
+.footer__title {
     font-weight: 700;
-    font-size: 64px;
-    line-height: 110%;
+    font-size: 48px;
     max-width: 1360px;
- 
+    margin: 0 auto 40px;
 }
 
-/* Контейнеры */
-.cart,
-.cart1,
-.cart2,
-.map {
-    width: 100%;
-    max-width: 1360px;
- 
-}
-
-.cart {
-    display: grid;
-    gap: 90px;
-}
-
-.info {
-    display: grid;
-    gap: 80px;
-}
-
-.cart1, .cart2 {
+/* Контейнер */
+.footer__content {
     display: flex;
-    gap: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.footer__info {
+    display: grid;
+    grid-template-columns: 780px 548px; /* На мобильных устройствах одна колонка */
+    gap: 20px;
 }
 
 /* Карточки */
-.contact, .Address {
-    width: 780px;
-    padding: 32px;
+.footer__contact,
+.footer__address {
+    padding: 24px;
     background: #F2F6D3;
-}
-.Social, .hours {
-    width: 548px;
-    padding: 32px;
-    background: #F2F6D3;
+    text-align: left;
+    border-radius: 8px; /* Первая колонка */
 }
 
+.footer__social,
+.footer__hours {
+    padding: 24px;
+    background: #F2F6D3;
+    text-align: left;
+    border-radius: 8px; /* Вторая колонка */
+}
 
-.phone, .social, .add, .work {
+.footer__contact,
+.footer__address {
+    flex: 1 1 780px;
+    max-width: 780px;
+    padding: 24px;
+    background: #F2F6D3;
+    text-align: left;
+    border-radius: 8px;
+}
+
+.footer__social,
+.footer__hours {
+    flex: 1 1 548px;
+    max-width: 548px;
+    padding: 24px;
+    background: #F2F6D3;
+    text-align: left;
+    border-radius: 8px;
+}
+
+/* Заголовки */
+.footer__contact-title,
+.footer__social-title,
+.footer__address-title,
+.footer__hours-title {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 130%;
     color: #8B8B8B;
 }
 
-.number, .street, .day {
+/* Текст */
+.footer__contact-number,
+.footer__address-text,
+.footer__hours-text {
     font-weight: 600;
-    font-size: 40px;
-    line-height: 110%;
+    font-size: 32px;
     color: #424436;
 }
 
-/* Карта */
-.map {
-    height: 350px;
+/* Соц. сети */
+.footer__social-icons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
 }
 
-.map iframe {
+.footer__social-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Карта */
+.footer__map {
+    width: 100%;
+    max-width: 1360px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.footer__map iframe {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border: none;
 }
 
 /* Адаптация */
 @media (max-width: 1024px) {
-    .cart {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
+    .footer__info {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer__info-block {
+        justify-content: center;
     }
 }
 
 @media (max-width: 768px) {
-    .info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+    .footer__title {
+        font-size: 56px;
     }
 
-    .contact, .Social, .Address, .hours {
+    .footer__info {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .footer__contact,
+    .footer__social,
+    .footer__address,
+    .footer__hours {
         width: 100%;
+        text-align: start;
+        font-size: 28px;
+    }
+
+    .footer__social-icons {
+        justify-content: start;
+    }
+
+    .footer__map {
+        height: 250px;
     }
 }
 
 @media (max-width: 480px) {
-    .footerText {
+    .footer__title {
         font-size: 48px;
     }
 
-    .number, .street, .day {
-        font-size: 24px;
+    .footer__info {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .cart {
-        display: flex;
-        flex-direction: column;
-        align-items: center; // Чтобы контент выровнялся по центру
-        gap: 20px; // Добавляем небольшие отступы между элементами
+    .footer__contact-number,
+    .footer__address-text,
+    .footer__hours-text {
+        font-size: 22px;
     }
 
-    .cart1, .cart2 {
-        flex-direction: column;
-        width: 100%; // Растягиваем элементы на всю ширину
-    }
-
-    .contact, .Social, .Address, .hours {
-        width: 100%;
+    .footer__map {
+        height: 200px;
     }
 }
